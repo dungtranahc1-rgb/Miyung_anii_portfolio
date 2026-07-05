@@ -272,12 +272,32 @@
 
   /* ---------- Footer / contact ---------- */
   footer{
-    padding:8vh 6% 6vh; text-align:center; border-top:1px solid var(--line);
+    padding:10vh 6% 6vh; text-align:center; border-top:1px solid var(--line); position:relative;
   }
-  footer h3{ font-size:1.5rem; margin-bottom:12px; }
-  footer p{ color:var(--muted); margin-bottom:26px; }
+  .footer-eyebrow{
+    font-size:0.8rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--glow); font-weight:600;
+    display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:18px;
+  }
+  .footer-eyebrow::before, .footer-eyebrow::after{ content:"✦"; opacity:0.6; }
+  footer h3{
+    font-size:clamp(2.6rem,6vw,4.2rem); font-weight:800; margin-bottom:10px; letter-spacing:-0.01em;
+    background:linear-gradient(120deg,var(--accent),var(--accent2) 55%,var(--glow));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  footer .footer-sub{ color:var(--muted); font-size:1rem; margin-bottom:30px; }
+  footer p.email{ color:var(--muted); margin-bottom:26px; font-size:0.98rem; }
   footer .socials{ justify-content:center; }
   .footnote{ margin-top:40px; font-size:0.8rem; color:var(--muted); opacity:0.7; }
+
+  .back-to-top{
+    position:fixed; right:26px; bottom:26px; z-index:60;
+    width:48px; height:48px; border-radius:50%; border:1px solid var(--line);
+    background:var(--panel); box-shadow:0 12px 30px rgba(47,128,255,0.18);
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    animation:bob 3s ease-in-out infinite;
+  }
+  .back-to-top svg{ width:18px; height:18px; fill:var(--accent); }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
 
   @media (max-width:820px){
     .hero-grid{ grid-template-columns:1fr; }
@@ -434,6 +454,8 @@
 
         <h4>Điều rút ra</h4>
         <p>Một quy tắc đặt tên rõ ràng và cấu trúc thư mục logic ngay từ đầu giúp việc tìm kiếm, sao lưu và làm việc nhóm về sau nhanh và ít nhầm lẫn hơn hẳn.</p>
+
+        <a class="report-link" href="https://drive.google.com/drive/folders/1mIhStvtP32Ex05YX4awlc3nbJOugcR7-" target="_blank">Xem báo cáo đầy đủ →</a>
       </div>
 
       <!-- BÀI 2 -->
@@ -551,6 +573,9 @@
           <li>Phản tư sau mỗi lần dùng AI: mình đã học được gì?</li>
         </ul>
 
+        <h4>Sản phẩm minh họa</h4>
+        <a class="report-link" href="https://drive.google.com/file/d/1fsQrYh_I0AI08GhQjVHmihh0jemvEV-9/view?usp=sharing" target="_blank">Xem Infographic minh họa →</a>
+
         <a class="report-link" href="https://docs.google.com/document/d/15rxY4tBXflxNQAJ-lvuQWVBIKSJyIrdk/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
       </div>
 
@@ -573,8 +598,10 @@
 
 <!-- CONTACT / FOOTER -->
 <footer id="contact">
-  <h3>Cùng kết nối nhé</h3>
-  <p>dungtranahc1@gmail.com</p>
+  <div class="footer-eyebrow">Portfolio hoàn thành</div>
+  <h3>Thank You</h3>
+  <p class="footer-sub">Cùng kết nối nhé</p>
+  <p class="email">dungtranahc1@gmail.com</p>
   <div class="socials">
     <a href="https://www.facebook.com/annie.tran.30" target="_blank" aria-label="Facebook">
       <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
@@ -591,6 +618,11 @@
   </div>
   <div class="footnote">Trần Thị Mỹ Dung · MSSV 25040563 · Nhập môn Công nghệ số &amp; Ứng dụng Trí tuệ nhân tạo · 2026</div>
 </footer>
+
+<a href="#home" class="back-to-top" aria-label="Lên đầu trang">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8 1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12z"/></svg>
+</a>
+
 
 </div>
 
