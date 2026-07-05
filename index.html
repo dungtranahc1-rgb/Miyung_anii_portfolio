@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Demo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#0B1220;
+    --ink-2:#111A2E;
+    --amber:#FFB454;
+    --mint:#6EE7B7;
+    --paper:#E8ECF4;
+    --muted:#8592AD;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.6;
+  }
+  ::selection{background:var(--amber); color:var(--ink);}
+
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  nav{
+    position:sticky; top:0; z-index:10;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 6%;
+    background:rgba(11,18,32,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  nav .logo{font-family:'JetBrains Mono'; font-weight:700; color:var(--amber); font-size:1.1rem;}
+  nav ul{list-style:none; display:flex; gap:28px;}
+  nav a{color:var(--muted); text-decoration:none; font-size:0.92rem; transition:color .2s;}
+  nav a:hover, nav a:focus-visible{color:var(--paper);}
+
+  header{
+    padding:14vh 6% 10vh;
+    position:relative;
+    overflow:hidden;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono'; color:var(--mint); font-size:0.85rem;
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:"$"; color:var(--amber);}
+  .cursor{display:inline-block; width:8px; height:1.1em; background:var(--mint); animation:blink 1s step-end infinite; vertical-align:text-bottom;}
+  @keyframes blink{50%{opacity:0;}}
+
+  h1{
+    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    max-width:16ch;
+  }
+  h1 span{color:var(--amber);}
+
+  header p.role{
+    margin-top:20px; font-size:1.15rem; color:var(--muted); max-width:52ch;
+  }
+
+  .links{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .links a{
+    font-family:'JetBrains Mono'; font-size:0.85rem;
+    color:var(--paper); border:1px solid rgba(255,255,255,0.18);
+    padding:10px 18px; border-radius:999px; text-decoration:none;
+    transition:border-color .2s, background .2s;
+  }
+  .links a:hover{border-color:var(--amber); background:rgba(255,180,84,0.08);}
+
+  section{padding:9vh 6%; border-top:1px solid rgba(255,255,255,0.06);}
+  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:44px;}
+  .section-head .tag{font-family:'JetBrains Mono'; color:var(--amber); font-size:0.85rem;}
+  .section-head h2{font-size:1.9rem; font-weight:600;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px;}
+  .card{
+    background:var(--ink-2); border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px; padding:26px; transition:transform .2s, border-color .2s;
+  }
+  .card:hover{transform:translateY(-4px); border-color:rgba(255,180,84,0.4);}
+  .card .num{font-family:'JetBrains Mono'; color:var(--mint); font-size:0.8rem;}
+  .card h3{margin:10px 0 8px; font-size:1.15rem;}
+  .card p{color:var(--muted); font-size:0.95rem;}
+
+  .skills{display:flex; flex-wrap:wrap; gap:10px;}
+  .skills span{
+    font-family:'JetBrains Mono'; font-size:0.82rem;
+    padding:8px 14px; border-radius:8px;
+    background:var(--ink-2); border:1px solid rgba(255,255,255,0.08); color:var(--paper);
+  }
+
+  footer{
+    padding:8vh 6%; text-align:center; border-top:1px solid rgba(255,255,255,0.06);
+    color:var(--muted); font-family:'JetBrains Mono'; font-size:0.85rem;
+  }
+  footer a{color:var(--amber); text-decoration:none;}
+
+  @media (max-width:640px){
+    nav ul{gap:16px;}
+    nav ul li:nth-child(3), nav ul li:nth-child(4){display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">&lt;/nts&gt;</div>
+  <ul>
+    <li><a href="#projects">Dự án</a></li>
+    <li><a href="#skills">Kỹ năng</a></li>
+    <li><a href="#about">Giới thiệu</a></li>
+    <li><a href="#contact">Liên hệ</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="eyebrow">whoami<span class="cursor"></span></div>
+  <h1>Nguyễn Văn <span>A</span></h1>
+  <p class="role">Sinh viên ngành Công nghệ Thông tin — thích xây dựng những thứ nhỏ mà chạy tốt, và học một công nghệ mới mỗi tháng.</p>
+  <div class="links">
+    <a href="#" target="_blank">GitHub ↗</a>
+    <a href="#" target="_blank">LinkedIn ↗</a>
+    <a href="mailto:ban@example.com">Email ↗</a>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="section-head">
+    <span class="tag">01</span>
+    <h2>Dự án</h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="num">proj / 01</div>
+      <h3>Ứng dụng quản lý chi tiêu</h3>
+      <p>Web app theo dõi thu chi cá nhân, biểu đồ trực quan, xây bằng React và Chart.js.</p>
+    </div>
+    <div class="card">
+      <div class="num">proj / 02</div>
+      <h3>Chatbot hỗ trợ sinh viên</h3>
+      <p>Bot trả lời câu hỏi thường gặp về học vụ, dùng Python và mô hình NLP đơn giản.</p>
+    </div>
+    <div class="card">
+      <div class="num">proj / 03</div>
+      <h3>Trang portfolio cá nhân</h3>
+      <p>Chính là trang bạn đang xem — thiết kế và code từ đầu, triển khai trên Vercel.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-head">
+    <span class="tag">02</span>
+    <h2>Kỹ năng</h2>
+  </div>
+  <div class="skills">
+    <span>HTML/CSS</span>
+    <span>JavaScript</span>
+    <span>Python</span>
+    <span>React</span>
+    <span>Git & GitHub</span>
+    <span>SQL</span>
+    <span>Figma</span>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <span class="tag">03</span>
+    <h2>Giới thiệu</h2>
+  </div>
+  <p style="max-width:60ch; color:var(--muted);">
+    Mình là sinh viên năm 2 ngành CNTT, quan tâm đến phát triển web và trí tuệ nhân tạo ứng dụng.
+    Ngoài giờ học, mình thích đóng góp cho các dự án mã nguồn mở nhỏ và viết blog kỹ thuật.
+  </p>
+</section>
+
+<footer id="contact">
+  Muốn trao đổi? Viết cho mình qua <a href="mailto:ban@example.com">ban@example.com</a>
+</footer>
+
+</body>
+</html>
