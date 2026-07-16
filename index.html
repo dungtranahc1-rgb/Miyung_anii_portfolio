@@ -764,11 +764,34 @@
     document.getElementById(target).classList.add('show');
   }
 
-  window.addEventListener('scroll', () => {
+  const progressBarEl = document.getElementById('progressBar');
+  const auroraSpans = document.querySelectorAll('#aurora span');
+  const photoFrame = document.getElementById('photoFrame');
+  let scrollTicking = false;
+
+  function onScrollUpdate(){
     const h = document.documentElement;
-    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    document.getElementById('progressBar').style.width = pct + '%';
-  });
+    const y = window.scrollY;
+    const pct = y / (h.scrollHeight - h.clientHeight) * 100;
+    progressBarEl.style.width = pct + '%';
+
+    auroraSpans.forEach((el, i) => {
+      const speed = 0.06 + i * 0.02;
+      el.style.transform = `translateY(${y * speed}px)`;
+    });
+    if (photoFrame){
+      const offset = Math.min(y * 0.04, 30);
+      photoFrame.style.transform = `translateY(${offset}px)`;
+    }
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking){
+      requestAnimationFrame(onScrollUpdate);
+      scrollTicking = true;
+    }
+  }, { passive: true });
 
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
@@ -815,20 +838,6 @@
       setTimeout(() => btn.textContent = original, 1800);
     });
   }
-
-  const auroraSpans = document.querySelectorAll('#aurora span');
-  const photoFrame = document.getElementById('photoFrame');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    auroraSpans.forEach((el, i) => {
-      const speed = 0.06 + i * 0.02;
-      el.style.transform = `translateY(${y * speed}px)`;
-    });
-    if (photoFrame){
-      const offset = Math.min(y * 0.04, 30);
-      photoFrame.style.transform = `translateY(${offset}px)`;
-    }
-  });
 </script>
 
 </body>
