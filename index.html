@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trần Thị Mỹ Dung | Digital Portfolio</title>
-<meta name="description" content="Digital Portfolio của Trần Thị Mỹ Dung - Sinh viên khoa Ngôn ngữ và Văn hóa Anh, ULIS - VNU. Tổng hợp 6 bài thực hành học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.">
+<meta name="description" content="Digital Portfolio của Trần Thị Mỹ Dung - Sinh viên khoa Ngôn ngữ và Văn hóa Anh, ULIS - VNU. 
+  Chào mừng bạn đã ghé thăm không gian số của mình! Mình yêu thích việc khám phá sự giao thoa giữa ngôn ngữ và công nghệ hiện đại. Portfolio này được xây dựng như một cuốn nhật ký ghi chép quá trình ứng dụng AI vào học tập và phát triển bản thân.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
@@ -427,13 +428,9 @@
         <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
     </div>
-    
-    <div class="fade-up" style="animation-delay: 0.15s; width: 100%; display: flex; justify-content: center;">
-      <div class="photo-frame" id="photoFrame">
-        <img src="received_1505951713937582.jpeg?v=2" alt="Trần Thị Mỹ Dung">
-      </div>
+    <div class="photo-frame fade-up" id="photoFrame" style="animation-delay:0.15s">
+      <img src="received_1505951713937582.jpeg?v=2" alt="Trần Thị Mỹ Dung">
     </div>
-    
   </div>
   <div class="scroll-cue">Cuộn xuống</div>
 </section>
@@ -507,1125 +504,339 @@
         <span class="icon-box">💬</span>
         Viết Prompt hiệu quả
       </button>
-      <button class="proj-item" data-target="p4"
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.Dung | Digital Portfolio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* --- CSS VARIABLES & RESET --- */
-    :root {
-      --primary: #8B5CF6;
-      --primary-light: #A78BFA;
-      --secondary: #3B82F6;
-      --bg-gradient: linear-gradient(135deg, #e0eaff 0%, #f3e8ff 100%);
-      --text-main: #1F2937;
-      --text-muted: #4B5563;
-      --glass-bg: rgba(255, 255, 255, 0.45);
-      --glass-border: rgba(255, 255, 255, 0.6);
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--text-main);
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* --- BACKGROUND GLOW EFFECT --- */
-    .bg-glow {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 70%, transparent 100%);
-      top: -10%;
-      right: -10%;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* --- NAVIGATION BAR --- */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--secondary);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-
-    nav ul a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    nav ul a:hover {
-      color: var(--primary);
-    }
-
-    /* --- HERO SECTION --- */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 2rem 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .eyebrow {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 .last {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .role {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .tags span {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-    }
-
-    /* Social Icons */
-    .socials {
-      display: flex;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .socials a {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: white;
-      border: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .socials a svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--text-muted);
-      transition: fill 0.3s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-3px);
-      border-color: var(--primary-light);
-      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.2);
-    }
-
-    .socials a:hover svg {
-      fill: var(--primary);
-    }
-
-    /* CTA Button */
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
-    }
-
-    .hero-cta svg {
-      width: 18px;
-      height: 18px;
-      stroke: white;
-      stroke-width: 2.5;
-      fill: none;
-      transition: transform 0.3s ease;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 25px rgba(139, 92, 246, 0.35);
-    }
-
-    .hero-cta:hover svg {
-      transform: translateY(3px);
-    }
-
-    /* --- PHOTO FRAME (FIXED) --- */
-    .photo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .photo-frame {
-      position: relative;
-      border: 4px solid var(--primary-light);
-      border-radius: 30px;
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-      width: 100%;
-      max-width: 350px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      animation: glowmove 8s ease-in-out infinite;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .photo-frame:hover img {
-      transform: scale(1.05);
-    }
-
-    /* --- SCROLL CUE & SECTION TITLE --- */
-    .scroll-cue {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-num {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-right: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      display: inline-block;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 40px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    /* --- PORTFOLIO SECTIONS --- */
-    section.content-section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.1);
-      border-color: var(--primary-light);
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--glass-border);
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* --- ANIMATIONS --- */
-    @keyframes fadeUpIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes glowmove {
-      0% {
-        border-color: var(--primary-light);
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
-      }
-      50% {
-        border-color: var(--secondary);
-        box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-      }
-      100% {
-        border-color: var(--primary-light);
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
-      }
-    }
-
-    .fade-up {
-      opacity: 0;
-      animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 968px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-      }
-      .hero {
-        align-items: center;
-      }
-      nav ul {
-        display: none;
-      }
-      h1 {
-        font-size: 2.8rem;
-      }
-      .scroll-cue {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="bg-glow"></div>
-
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">M.DUNG</a>
-      <nav>
-        <ul>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#summary">Tổng kết</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-      </nav>
+      <button class="proj-item" data-target="p4" onclick="switchProj(this,'p4')">
+        <span class="icon-box">🤝</span>
+        Hợp tác trực tuyến
+      </button>
+      <button class="proj-item" data-target="p5" onclick="switchProj(this,'p5')">
+        <span class="icon-box">🎨</span>
+        Sáng tạo nội dung AI
+      </button>
+      <button class="proj-item" data-target="p6" onclick="switchProj(this,'p6')">
+        <span class="icon-box">🛡️</span>
+        AI có trách nhiệm
+      </button>
     </div>
-  </header>
 
-  <main>
-    <section id="home">
-      <div class="hero-grid">
-        <div class="hero">
-          <div class="eyebrow fade-up" style="animation-delay: 0s">Digital Portfolio · 2026</div>
-          <h1 class="fade-up" style="animation-delay: 0.1s">Trần Thị Mỹ <span class="last">Dung</span></h1>
-          <p class="role fade-up" style="animation-delay: 0.2s">
-            Em là sinh viên khoa Sư phạm Tiếng Anh, Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS). Portfolio này lưu lại hành trình học tập và các bài thực hành thực tế của em trong học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
-          </p>
-          
-          <div class="tags fade-up" style="animation-delay: 0.3s">
-            <span>Sư phạm Anh</span>
-            <span>ULIS</span>
-            <span>AI ứng dụng</span>
-            <span>MSSV: 25040563</span>
-          </div>
-          
-          <div class="socials fade-up" style="animation-delay: 0.4s">
-            <a href="https://www.facebook.com/annie.tran.30" target="_blank" aria-label="Facebook">
-              <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/miyung_anii" target="_blank" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 11 2h1zm0 1.8c-2.6 0-2.9 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.1-.1-1.4-.1-4-.1zm0 3a5.2 5.2 0 1 1 0 10.4A5.2 5.2 0 0 1 12 6.8zm0 1.8a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.4-2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
-            </a>
-            <a href="https://www.tiktok.com/@annietran300" target="_blank" aria-label="TikTok">
-              <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.4a2.8 2.8 0 1 1-2-2.7v-3.2a6 6 0 1 0 5.2 6V8.9a7.8 7.8 0 0 0 4.6 1.5V7.2a4.6 4.6 0 0 1-4.6-4.6V2z"/></svg>
-            </a>
-            <a href="mailto:dungtranahc1@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.6 2 7.4 6.2L19.4 7H4.6zM4 8.3V18h16V8.3l-8 6.7-8-6.7z"/></svg>
-            </a>
-          </div>
+    <div class="proj-content">
 
-          <a href="#projects" class="hero-cta fade-up" style="animation-delay: 0.5s">
-            Khám phá Portfolio
-            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </a>
-        </div>
-        
-        <div class="fade-up" style="animation-delay: 0.15s; width: 100%; display: flex; justify-content: center;">
-          <div class="photo-frame" id="photoFrame">
-            <img src="profile.jpg" alt="Trần Thị Mỹ Dung">
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">Cuộn xuống</div>
-    </section>
+      <div class="proj-panel show" id="p1">
+        <div class="p-eyebrow">Bài 1 · Kỹ năng số cơ bản</div>
+        <h3>Thao tác cơ bản với tệp tin và thư mục</h3>
+        <p class="p-sub">Rèn luyện kỹ năng tạo, đổi tên, sao chép, di chuyển và xóa tệp/thư mục trên File Explorer (Windows).</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Quản lý dữ liệu số</div>
 
-    <section id="about" class="content-section">
-      <div class="section-header">
-        <span class="section-num">01 .</span>
-        <h2 class="section-title">Về mình</h2>
-      </div>
-      <div class="card">
-        <h3>Học viên khoa Sư phạm Tiếng Anh - ULIS</h3>
-        <p>Chào các bạn! Mình là Mỹ Dung, sinh viên K60 khoa Sư phạm Tiếng Anh trường Đại học Ngoại ngữ - ĐHQGHN. Mình đam mê học hỏi công nghệ và luôn nỗ lực ứng dụng các công cụ AI vào việc nâng cao hiệu quả giảng dạy và học tập ngôn ngữ trong tương lai.</p>
-      </div>
-    </section>
+        <div class="step-list">
+          <div class="step-row"><div class="step-num">1</div><p>Tạo thư mục gốc <code>ThucHanh_MyDung</code>, bên trong có thư mục con <code>TaiLieu</code></p></div>
+          <div class="step-row"><div class="step-num">2</div><p>Tạo tệp văn bản, đổi tên <code>GhiChu.txt</code> thành <code>GhiChuQuanTrong.txt</code></p></div>
+          <div class="step-row"><div class="step-num">3</div><p>Thực hành <strong>Copy &amp; Paste</strong> để nhân bản tệp</p></div>
+          <div class="step-row"><div class="step-num">4</div><p>Thực hành <strong>Cut &amp; Paste</strong> để di chuyển tệp</p></div>
+          <div class="step-row"><div class="step-num">5</div><p>Xóa vào Thùng rác rồi khôi phục lại bằng Restore</p></div>
+          <div class="step-row"><div class="step-num">6</div><p>Xóa vĩnh viễn bằng Shift + Delete</p></div>
+        </div>
 
-    <section id="projects" class="content-section">
-      <div class="section-header">
-        <span class="section-num">02 .</span>
-        <h2 class="section-title">Dự án & Thực hành</h2>
-      </div>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Bài thực hành 1: Thiết kế CV Cá nhân</h3>
-          <p>Em đã sử dụng Canva để thiết kế CV cá nhân chuyên nghiệp, thể hiện phong cách và định hướng học tập tại ULIS.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 2: Tạo lập Fanpage</h3>
-          <p>Xây dựng fanpage học tập trên Facebook, lên kế hoạch nội dung và thiết kế ảnh bìa, avatar đồng bộ.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 3: Viết bài SEO</h3>
-          <p>Viết bài chuẩn SEO về chủ đề phương pháp học tiếng Anh hiệu quả cho sinh viên năm nhất ULIS.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 4: Thiết kế Website</h3>
-          <p>Tạo trang web đơn giản bằng Google Sites giới thiệu bản thân và các hoạt động ngoại khóa đã tham gia.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 5: Sáng tạo Video</h3>
-          <p>Sản xuất video ngắn (Reels/TikTok) chia sẻ mẹo tự học IELTS đạt điểm cao từ kinh nghiệm bản thân.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 6: Ứng dụng Chatbot AI</h3>
-          <p>Thực hành tạo lập kịch bản và huấn luyện chatbot AI hỗ trợ trả lời tự động câu hỏi thường gặp tuyển sinh ULIS.</p>
-        </div>
-      </div>
-    </section>
+        <p>Qua bài này, em nhận ra một quy tắc đặt tên rõ ràng và cấu trúc thư mục hợp lý sẽ tiết kiệm đáng kể thời gian tìm kiếm tài liệu về sau.</p>
 
-    <section id="summary" class="content-section">
-      <div class="section-header">
-        <span class="section-num">03 .</span>
-        <h2 class="section-title">Tổng kết</h2>
+        <a class="report-link" href="https://drive.google.com/drive/folders/1mIhStvtP32Ex05YX4awlc3nbJOugcR7-" target="_blank">Xem báo cáo đầy đủ →</a>
       </div>
-      <div class="card">
-        <h3>Những bài học quý giá</h3>
-        <p>Qua học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo, em không chỉ thành thạo hơn các công cụ số mà còn thay đổi tư duy về cách học tập chủ động. Công nghệ không thay thế con người, nhưng người biết dùng công nghệ sẽ đi nhanh và xa hơn.</p>
-      </div>
-    </section>
 
-    <section id="contact" class="content-section">
-      <div class="section-header">
-        <span class="section-num">04 .</span>
-        <h2 class="section-title">Liên hệ</h2>
-      </div>
-      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h3>Kết nối với mình</h3>
-        <p style="margin-bottom: 1.5rem;">Đừng ngần ngại liên lạc với mình qua các kênh mạng xã hội hoặc gửi mail trực tiếp nhé!</p>
-        <a href="mailto:dungtranahc1@gmail.com" class="hero-cta" style="margin-top: 1rem;">Gửi Email Cho Dung</a>
-      </div>
-    </section>
-  </main>
+      <div class="proj-panel" id="p2">
+        <div class="p-eyebrow">Bài 2 · Khai thác dữ liệu &amp; thông tin</div>
+        <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
+        <p class="p-sub">Chủ đề: Ảnh hưởng của công cụ AI đối với việc học tiếng Anh</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Đánh giá nguồn thông tin học thuật</div>
 
-  <footer>
-    <p>&copy; 2026 Trần Thị Mỹ Dung. All Rights Reserved.</p>
-  </footer>
+        <div class="metric-row">
+          <div class="metric"><b>10</b> tài liệu</div>
+          <div class="metric"><b>6</b> bài bình duyệt</div>
+          <div class="metric"><b>4</b> tiêu chí đánh giá</div>
+        </div>
+
+        <p>Với chủ đề trên, em sử dụng các toán tử tìm kiếm nâng cao trên Google Scholar để chọn lọc nguồn phù hợp. Mỗi tài liệu được đánh giá độ tin cậy dựa trên các yếu tố sau</p>
+        <ul>
+          <li>Tác giả và tổ chức xuất bản</li>
+          <li>Phương pháp nghiên cứu</li>
+          <li>Mức độ được trích dẫn</li>
+          <li>Tính cập nhật của thông tin</li>
+        </ul>
+
+        <p>Bài tập này đã thay đổi cách em tiếp cận thông tin. Thay vì chỉ dùng kết quả đầu tiên trên công cụ tìm kiếm, em hình thành thói quen kiểm chứng nguồn trước khi trích dẫn.</p>
+        <p>Em đặc biệt chú ý kiểm tra xem tác giả có thực sự là chuyên gia trong lĩnh vực đó không, và bài viết có được đăng trên một tạp chí uy tín hay không. Em cũng nhận ra rằng một nguồn thông tin cũ không hẳn là kém giá trị, miễn là nó vẫn được các nghiên cứu sau này trích dẫn và công nhận.</p>
+        <p>Điều này giúp em tự tin hơn hẳn mỗi khi phải viết luận hay làm bài tập cần đến tài liệu tham khảo.</p>
+
+        <a class="report-link" href="https://docs.google.com/document/d/1X33z82H38Z7vVPcza5-op7EcXBYG3ys8fD46GihwH5M/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
+      </div>
+
+      <div class="proj-panel" id="p3">
+        <div class="p-eyebrow">Bài 3 · Tổng quan Trí tuệ nhân tạo</div>
+        <h3>Viết Prompt hiệu quả cho tác vụ học tập</h3>
+        <p class="p-sub">Thử nghiệm 3 mức độ prompt (cơ bản → cải tiến → nâng cao) trên 3 tác vụ học tập.</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Prompt Engineering</div>
+
+        <table class="mini-table">
+          <tr><th>Mức độ prompt</th><th>Kết quả nhận được</th></tr>
+          <tr><td>Cơ bản</td><td>Ngắn, chung chung, thiếu trọng tâm</td></tr>
+          <tr><td>Cải tiến</td><td>Có cấu trúc hơn nhưng vẫn thiếu ví dụ</td></tr>
+          <tr><td>Nâng cao</td><td>Rõ vai trò, đúng đối tượng, có ví dụ minh họa</td></tr>
+        </table>
+
+        <p>Áp dụng trên ba tác vụ gồm tóm tắt tài liệu, giải thích khái niệm, và tạo câu hỏi ôn tập, em nhận thấy rõ ràng rằng chất lượng câu trả lời của AI phụ thuộc rất nhiều vào cách mình đặt câu hỏi ngay từ đầu.</p>
+        <p>Đây là bài em cảm thấy hứng thú nhất trong cả sáu bài, vì được thực hành trực tiếp với AI thay vì chỉ tiếp cận qua lý thuyết suông.</p>
+        <p>Việc so sánh trực tiếp ba mức độ prompt trên cùng một tác vụ giúp em nhìn thấy rất rõ sự khác biệt, từ đó rút ra được một nguyên tắc quan trọng cho bản thân là luôn cung cấp đủ ngữ cảnh, vai trò và định dạng mong muốn khi làm việc với AI, thay vì hỏi một câu chung chung rồi hy vọng AI tự hiểu ý mình.</p>
+
+        <a class="report-link" href="https://docs.google.com/document/d/1Id14ex5sv2OlMAFswiC3kUZIKqaPjVQttB6TSnuCNOU/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
+      </div>
+
+      <div class="proj-panel" id="p4">
+        <div class="p-eyebrow">Bài 4 · Giao tiếp &amp; hợp tác số</div>
+        <h3>Báo cáo hợp tác trong Bài tập giữa kỳ</h3>
+        <p class="p-sub">Dự án video "AI và áp lực so sánh trên mạng xã hội đối với giới trẻ Việt Nam" · Vai trò: Leader, Nhóm 20</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Hợp tác &amp; quản lý dự án số</div>
+
+        <table class="mini-table">
+          <tr><th>Công cụ</th><th>Vai trò sử dụng</th></tr>
+          <tr><td>Zalo</td><td>Điều phối nhanh, ra quyết định tức thời</td></tr>
+          <tr><td>Google Sheets</td><td>Theo dõi tiến độ, phân công minh bạch</td></tr>
+          <tr><td>Google Docs</td><td>Cùng biên soạn kịch bản</td></tr>
+          <tr><td>Google Drive</td><td>Lưu trữ tài liệu có cấu trúc</td></tr>
+        </table>
+
+        <p>Qua vai trò này, em hiểu rằng công việc điều phối đòi hỏi sự cân bằng giữa duy trì tiến độ chung và tránh tạo áp lực không cần thiết cho các thành viên.</p>
+        <p>Có những lúc em phải nhắc deadline nhiều lần mà vẫn cố giữ giọng nhẹ nhàng để không khí nhóm không bị căng thẳng, và cũng có lúc em phải tự đứng ra giải quyết khi hai bạn trong nhóm có ý kiến trái chiều về nội dung kịch bản.</p>
+        <p>Trải nghiệm này dạy em rằng làm leader không phải là ra lệnh, mà là biết lắng nghe, biết khi nào cần cứng rắn về thời hạn và khi nào cần linh hoạt để mọi người thoải mái đóng góp ý tưởng.</p>
+
+        <a class="report-link" href="https://youtu.be/ybWhLofZ324" target="_blank">Xem video dự án nhóm →</a>
+        <a class="report-link" href="https://docs.google.com/document/d/1WDWq4v_7bK5RF9azVw-tP6tkCLjXvv-a/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
+      </div>
+
+      <div class="proj-panel" id="p5">
+        <div class="p-eyebrow">Bài 5 · Sáng tạo nội dung số</div>
+        <h3>Ứng dụng AI tạo sinh trong sáng tạo nội dung</h3>
+        <p class="p-sub">Sản phẩm: Infographic "Biến đổi khí hậu – Hành động nhỏ, thay đổi lớn"</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Sáng tạo nội dung với AI tạo sinh</div>
+
+        <ul>
+          <li><strong>Claude</strong> — xây khung nội dung, tối ưu độ dài qua nhiều vòng chỉnh sửa prompt</li>
+          <li><strong>ChatGPT</strong> — bổ sung góc nhìn, đặc biệt ở lời kêu gọi hành động</li>
+          <li><strong>Canva AI</strong> — tạo tagline bằng Magic Write và hình minh họa</li>
+        </ul>
+
+        <div class="contrib-bar">
+          <div class="contrib-row"><span style="width:70px;">AI hỗ trợ</span><div class="contrib-track"><div class="contrib-fill" data-fill="42"></div></div><span>~42%</span></div>
+          <div class="contrib-row"><span style="width:70px;">Cá nhân</span><div class="contrib-track"><div class="contrib-fill" data-fill="58"></div></div><span>~58%</span></div>
+        </div>
+
+        <p>Nhờ đó em nhận ra AI có thể rút ngắn đáng kể giai đoạn khởi tạo ý tưởng, giúp em không còn phải đối mặt với cảm giác bí ý tưởng ngay từ bước đầu tiên.</p>
+        <p>Nhưng càng làm em càng thấy rõ, phần khiến sản phẩm thực sự trở nên đáng tin và có dấu ấn riêng, như việc kiểm chứng lại các số liệu về khí hậu, chọn lọc câu chữ nào giữ lại và câu nào bỏ đi, hay quyết định phong cách hình ảnh cuối cùng, vẫn luôn phải do chính em đảm nhiệm.</p>
+        <p>Em nghĩ đây chính là ranh giới quan trọng nhất khi làm việc cùng AI, tức là dùng AI để đi nhanh hơn ở giai đoạn đầu, nhưng không để AI thay mình quyết định điều gì là đúng và điều gì đáng tin.</p>
+
+        <a class="report-link" href="https://drive.google.com/file/d/1VirxlvYyq7NRjsGR3ELtfjckANdhhxBp/view?usp=sharing" target="_blank">Xem Infographic minh họa →</a>
+        <a class="report-link" href="https://docs.google.com/document/d/1CZ23ugQxroNZEUGaRWxRQpZgGEusF0PLykuFkltQf_Q/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
+      </div>
+
+      <div class="proj-panel" id="p6">
+        <div class="p-eyebrow">Bài 6 · An toàn &amp; liêm chính học thuật</div>
+        <h3>Sử dụng AI có trách nhiệm trong học tập</h3>
+        <p class="p-sub">Nghiên cứu chính sách AI của ĐHQGHN kết hợp thực hành viết luận có AI hỗ trợ.</p>
+        <div class="skill-tag">Kỹ năng rèn luyện · Sử dụng AI có trách nhiệm &amp; liêm chính học thuật</div>
+
+        <p>Sau khi tìm hiểu chính sách sử dụng AI của ĐHQGHN, em thực hành viết luận có AI hỗ trợ theo quy trình 4 bước và luôn đối chiếu số liệu trước khi dùng.</p>
+
+        <h4>Bộ 6 nguyên tắc cá nhân</h4>
+        <table class="mini-table">
+          <tr><td>① Em là tác giả của tư duy</td><td>④ AI hỗ trợ học, không thay thế việc học</td></tr>
+          <tr><td>② Minh bạch việc dùng AI ở đâu, vì sao</td><td>⑤ Tôn trọng quy định riêng từng môn</td></tr>
+          <tr><td>③ Luôn kiểm chứng số liệu, trích dẫn</td><td>⑥ Tự đánh giá lại sau mỗi lần dùng AI</td></tr>
+        </table>
+
+        <p>Đây là bài em tâm đắc nhất, và em tin bộ nguyên tắc này sẽ tiếp tục đồng hành cùng em trong học tập cũng như công việc sau này.</p>
+
+        <a class="report-link" href="https://drive.google.com/file/d/1fsQrYh_I0AI08GhQjVHmihh0jemvEV-9/view?usp=sharing" target="_blank">Xem Infographic minh họa →</a>
+        <a class="report-link" href="https://docs.google.com/document/d/15rxY4tBXflxNQAJ-lvuQWVBIKSJyIrdk/edit?usp=sharing" target="_blank">Xem báo cáo đầy đủ →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="summary" class="reveal">
+  <div class="section-head">
+    <span class="tag">03 · Wrap Up</span>
+    <h2>Tổng kết hành trình</h2>
+    <span class="underline-bar"></span>
+    <p class="section-desc">Nhìn lại chặng đường tự học, ứng dụng công nghệ số và rèn luyện liêm chính học thuật trong học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num" data-count="6">0</div><div class="stat-label">Bài tập</div></div>
+    <div class="stat-card"><div class="stat-num" data-count="1">0</div><div class="stat-label">Bài tập giữa kỳ</div><a class="stat-link" href="https://youtu.be/ybWhLofZ324" target="_blank">Xem video →</a></div>
+    <div class="stat-card"><div class="stat-num" data-count="1">0</div><div class="stat-label">Digital Portfolio</div></div>
+  </div>
+
+  <div class="journey">
+    <div class="journey-item">
+      <div class="journey-icon">🌟</div>
+      <div class="journey-content">
+        <div class="card-tag">Hành trình tự hào</div>
+        <h4>Trải nghiệm cá nhân</h4>
+        <p>Thực hiện portfolio này là một trải nghiệm mà em trân trọng. Được ngồi lại nhìn về chặng đường sáu bài học đã qua, rồi tự tay xây dựng nên một trang web hoàn chỉnh của riêng mình.</p>
+        <p>Đó là điều mà trước đây em chưa từng nghĩ một sinh viên ngành ngôn ngữ như em có thể làm được. Với em, đây không chỉ là một bài tập, mà còn là một dấu mốc nhỏ đáng nhớ trên hành trình học tập của mình.</p>
+      </div>
+    </div>
+    <div class="journey-item">
+      <div class="journey-icon">⚡</div>
+      <div class="journey-content">
+        <div class="card-tag">Toughest obstacles</div>
+        <h4>Thách thức đã vượt qua</h4>
+        <h5>Vai trò điều phối nhóm</h5>
+        <p>Thử thách lớn nhất với em có lẽ nằm ở giai đoạn đảm nhận vai trò leader trong Bài tập giữa kỳ, khi em phải vừa giữ vững tiến độ chung của cả nhóm, vừa cố gắng không tạo áp lực khiến không khí làm việc trở nên căng thẳng. Đó là một bài học không nhỏ về cách cân bằng giữa trách nhiệm và sự thấu hiểu đồng đội.</p>
+        <h5>Lần đầu triển khai web thực tế</h5>
+        <p>Bên cạnh đó, lần đầu tiên tự tay đưa một trang web lên internet thông qua GitHub và Vercel cũng là một trải nghiệm không hề dễ dàng, khi em phải mày mò từng bước một, từ việc tạo kho lưu trữ cho đến khi trang web thực sự hoạt động. Dù đôi lúc cảm thấy loay hoay, em vẫn kiên trì đến cùng, và khi hoàn thành, em thật sự cảm thấy tự hào vì đã không bỏ cuộc giữa chừng.</p>
+      </div>
+    </div>
+    <div class="journey-item spotlight">
+      <div class="journey-icon">🏆</div>
+      <div class="journey-content">
+        <div class="spotlight-badge">⭐ Điểm nhấn</div>
+        <div class="card-tag">Điều đáng nhớ nhất</div>
+        <h4>Tâm đắc nhất</h4>
+        <p>Trong sáu bài thực hành, em thấy Bài 5 với sản phẩm Infographic về biến đổi khí hậu là điều mình tâm đắc nhất. Đây là bài duy nhất em phối hợp nhuần nhuyễn ba công cụ AI khác nhau trong cùng một quy trình sáng tạo.</p>
+        <p>Đó cũng là lúc em cảm nhận rõ nhất vai trò của việc biên tập, kiểm chứng thông tin, thay vì để AI quyết định thay mình. Với em, đó chính là tinh thần làm việc cùng AI mà học phần này mong muốn hướng tới.</p>
+      </div>
+    </div>
+    <div class="journey-item">
+      <div class="journey-icon">💛</div>
+      <div class="journey-content">
+        <div class="card-tag">Acknowledgments</div>
+        <h4>Tri ân thầy cô &amp; bạn bè</h4>
+        <p>Em muốn gửi lời cảm ơn chân thành tới thầy <strong>Bùi Vũ Anh</strong> vì những bài giảng thực tế và định hướng liêm chính học thuật rất quý giá trong suốt học phần. Đồng thời em cũng cảm ơn các bạn <strong>Nhóm 20</strong> đã luôn đồng hành, hỗ trợ nhau hết mình để cùng hoàn thành tốt Bài tập giữa kỳ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-eyebrow">Portfolio hoàn thành</div>
+  <h3>Thank You</h3>
+  <p class="footer-sub">Cùng kết nối nhé</p>
+
+  <a class="mail-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=dungtranahc1@gmail.com&su=L%E1%BB%9Di%20nh%E1%BA%AFn%20t%E1%BB%AB%20Portfolio" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.6 2 7.4 6.2L19.4 7H4.6zM4 8.3V18h16V8.3l-8 6.7-8-6.7z"/></svg>
+    Lời nhắn tới Mỹ Dung
+  </a>
+
+  <p class="email">dungtranahc1@gmail.com
+    <button class="copy-btn" onclick="copyEmail(this)" aria-label="Copy email">Copy</button>
+  </p>
+  <div class="socials">
+    <a href="https://www.facebook.com/annie.tran.30" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/miyung_anii" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 11 2h1zm0 1.8c-2.6 0-2.9 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.1-.1-1.4-.1-4-.1zm0 3a5.2 5.2 0 1 1 0 10.4A5.2 5.2 0 0 1 12 6.8zm0 1.8a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.4-2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@annietran300" target="_blank" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.4a2.8 2.8 0 1 1-2-2.7v-3.2a6 6 0 1 0 5.2 6V8.9a7.8 7.8 0 0 0 4.6 1.5V7.2a4.6 4.6 0 0 1-4.6-4.6V2z"/></svg>
+    </a>
+    <a href="mailto:dungtranahc1@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.6 2 7.4 6.2L19.4 7H4.6zM4 8.3V18h16V8.3l-8 6.7-8-6.7z"/></svg>
+    </a>
+  </div>
+  <div class="footer-madeby">Made with 💙 by Mỹ Dung</div>
+  <div class="footer-stack">
+    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub</span><span>Vercel</span>
+  </div>
+  <div class="footnote">Trần Thị Mỹ Dung · MSSV 25040563 · Nhập môn Công nghệ số &amp; Ứng dụng Trí tuệ nhân tạo · 2026</div>
+</footer>
+
+<a href="#home" class="back-to-top" aria-label="Lên đầu trang">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8 1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12z"/></svg>
+</a>
+</div>
+
+<script>
+  function switchProj(btn, target){
+    document.querySelectorAll('.proj-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.proj-panel').forEach(el => el.classList.remove('show'));
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('show');
+  }
+
+  const progressBarEl = document.getElementById('progressBar');
+  const auroraSpans = document.querySelectorAll('#aurora span');
+  const photoFrame = document.getElementById('photoFrame');
+  let scrollTicking = false;
+
+  function onScrollUpdate(){
+    const h = document.documentElement;
+    const y = window.scrollY;
+    const pct = y / (h.scrollHeight - h.clientHeight) * 100;
+    progressBarEl.style.width = pct + '%';
+
+    auroraSpans.forEach((el, i) => {
+      const speed = 0.06 + i * 0.02;
+      el.style.transform = `translateY(${y * speed}px)`;
+    });
+    if (photoFrame){
+      const offset = Math.min(y * 0.04, 30);
+      photoFrame.style.transform = `translateY(${offset}px)`;
+    }
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking){
+      requestAnimationFrame(onScrollUpdate);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  const statEls = document.querySelectorAll('.stat-num');
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        let current = 0;
+        const step = () => {
+          current++;
+          el.textContent = current;
+          if (current < target) requestAnimationFrame(step);
+          else el.textContent = target;
+        };
+        step();
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  statEls.forEach(el => statObserver.observe(el));
+
+  const fillEls = document.querySelectorAll('.contrib-fill');
+  const fillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.width = el.getAttribute('data-fill') + '%';
+        fillObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  fillEls.forEach(el => fillObserver.observe(el));
+
+  function copyEmail(btn){
+    navigator.clipboard.writeText('dungtranahc1@gmail.com').then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Đã copy!';
+      setTimeout(() => btn.textContent = original, 1800);
+    });
+  }
+</script>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.Dung | Digital Portfolio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* --- CSS VARIABLES & RESET --- */
-    :root {
-      --primary: #8B5CF6;
-      --primary-light: #A78BFA;
-      --secondary: #3B82F6;
-      --bg-gradient: linear-gradient(135deg, #e0eaff 0%, #f3e8ff 100%);
-      --text-main: #1F2937;
-      --text-muted: #4B5563;
-      --glass-bg: rgba(255, 255, 255, 0.45);
-      --glass-border: rgba(255, 255, 255, 0.6);
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--text-main);
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* --- BACKGROUND GLOW EFFECT --- */
-    .bg-glow {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 70%, transparent 100%);
-      top: -10%;
-      right: -10%;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* --- NAVIGATION BAR --- */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--secondary);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-
-    nav ul a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    nav ul a:hover {
-      color: var(--primary);
-    }
-
-    /* --- HERO SECTION --- */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 2rem 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .eyebrow {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 .last {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .role {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .tags span {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-    }
-
-    /* Social Icons */
-    .socials {
-      display: flex;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .socials a {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: white;
-      border: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .socials a svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--text-muted);
-      transition: fill 0.3s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-3px);
-      border-color: var(--primary-light);
-      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.2);
-    }
-
-    .socials a:hover svg {
-      fill: var(--primary);
-    }
-
-    /* CTA Button */
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
-    }
-
-    .hero-cta svg {
-      width: 18px;
-      height: 18px;
-      stroke: white;
-      stroke-width: 2.5;
-      fill: none;
-      transition: transform 0.3s ease;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 25px rgba(139, 92, 246, 0.35);
-    }
-
-    .hero-cta:hover svg {
-      transform: translateY(3px);
-    }
-
-    /* --- PHOTO FRAME (FIXED) --- */
-    .photo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .photo-frame {
-      position: relative;
-      border: 4px solid var(--primary-light);
-      border-radius: 30px;
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-      width: 100%;
-      max-width: 350px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      animation: glowmove 8s ease-in-out infinite;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .photo-frame:hover img {
-      transform: scale(1.05);
-    }
-
-    /* --- SCROLL CUE & SECTION TITLE --- */
-    .scroll-cue {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-num {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-right: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      display: inline-block;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 40px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    /* --- PORTFOLIO SECTIONS --- */
-    section.content-section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.1);
-      border-color: var(--primary-light);
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--glass-border);
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* --- ANIMATIONS --- */
-    @keyframes fadeUpIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes glowmove {
-      0% {
-        border-color: var(--primary-light);
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
-      }
-      50% {
-        border-color: var(--secondary);
-        box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-      }
-      100% {
-        border-color: var(--primary-light);
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
-      }
-    }
-
-    .fade-up {
-      opacity: 0;
-      animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 968px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-      }
-      .hero {
-        align-items: center;
-      }
-      nav ul {
-        display: none;
-      }
-      h1 {
-        font-size: 2.8rem;
-      }
-      .scroll-cue {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="bg-glow"></div>
-
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">M.DUNG</a>
-      <nav>
-        <ul>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#summary">Tổng kết</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="home">
-      <div class="hero-grid">
-        <div class="hero">
-          <div class="eyebrow fade-up" style="animation-delay: 0s">Digital Portfolio · 2026</div>
-          <h1 class="fade-up" style="animation-delay: 0.1s">Trần Thị Mỹ <span class="last">Dung</span></h1>
-          <p class="role fade-up" style="animation-delay: 0.2s">
-            Em là sinh viên khoa Sư phạm Tiếng Anh, Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS). Portfolio này lưu lại hành trình học tập và các bài thực hành thực tế của em trong học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
-          </p>
-          
-          <div class="tags fade-up" style="animation-delay: 0.3s">
-            <span>Sư phạm Anh</span>
-            <span>ULIS</span>
-            <span>AI ứng dụng</span>
-            <span>MSSV: 25040563</span>
-          </div>
-          
-          <div class="socials fade-up" style="animation-delay: 0.4s">
-            <a href="https://www.facebook.com/annie.tran.30" target="_blank" aria-label="Facebook">
-              <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/miyung_anii" target="_blank" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 11 2h1zm0 1.8c-2.6 0-2.9 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.1-.1-1.4-.1-4-.1zm0 3a5.2 5.2 0 1 1 0 10.4A5.2 5.2 0 0 1 12 6.8zm0 1.8a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.4-2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
-            </a>
-            <a href="https://www.tiktok.com/@annietran300" target="_blank" aria-label="TikTok">
-              <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.4a2.8 2.8 0 1 1-2-2.7v-3.2a6 6 0 1 0 5.2 6V8.9a7.8 7.8 0 0 0 4.6 1.5V7.2a4.6 4.6 0 0 1-4.6-4.6V2z"/></svg>
-            </a>
-            <a href="mailto:dungtranahc1@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.6 2 7.4 6.2L19.4 7H4.6zM4 8.3V18h16V8.3l-8 6.7-8-6.7z"/></svg>
-            </a>
-          </div>
-
-          <a href="#projects" class="hero-cta fade-up" style="animation-delay: 0.5s">
-            Khám phá Portfolio
-            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </a>
-        </div>
-        
-        <div class="fade-up" style="animation-delay: 0.15s; width: 100%; display: flex; justify-content: center;">
-          <div class="photo-frame" id="photoFrame">
-            <img src="profile.jpg" alt="Trần Thị Mỹ Dung">
-          </div>
-        </div>
-      </div>
-      <div class="scroll-cue">Cuộn xuống</div>
-    </section>
-
-    <section id="about" class="content-section">
-      <div class="section-header">
-        <span class="section-num">01 .</span>
-        <h2 class="section-title">Về mình</h2>
-      </div>
-      <div class="card">
-        <h3>Học viên khoa Sư phạm Tiếng Anh - ULIS</h3>
-        <p>Chào các bạn! Mình là Mỹ Dung, sinh viên K60 khoa Sư phạm Tiếng Anh trường Đại học Ngoại ngữ - ĐHQGHN. Mình đam mê học hỏi công nghệ và luôn nỗ lực ứng dụng các công cụ AI vào việc nâng cao hiệu quả giảng dạy và học tập ngôn ngữ trong tương lai.</p>
-      </div>
-    </section>
-
-    <section id="projects" class="content-section">
-      <div class="section-header">
-        <span class="section-num">02 .</span>
-        <h2 class="section-title">Dự án & Thực hành</h2>
-      </div>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Bài thực hành 1: Thiết kế CV Cá nhân</h3>
-          <p>Em đã sử dụng Canva để thiết kế CV cá nhân chuyên nghiệp, thể hiện phong cách và định hướng học tập tại ULIS.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 2: Tạo lập Fanpage</h3>
-          <p>Xây dựng fanpage học tập trên Facebook, lên kế hoạch nội dung và thiết kế ảnh bìa, avatar đồng bộ.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 3: Viết bài SEO</h3>
-          <p>Viết bài chuẩn SEO về chủ đề phương pháp học tiếng Anh hiệu quả cho sinh viên năm nhất ULIS.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 4: Thiết kế Website</h3>
-          <p>Tạo trang web đơn giản bằng Google Sites giới thiệu bản thân và các hoạt động ngoại khóa đã tham gia.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 5: Sáng tạo Video</h3>
-          <p>Sản xuất video ngắn (Reels/TikTok) chia sẻ mẹo tự học IELTS đạt điểm cao từ kinh nghiệm bản thân.</p>
-        </div>
-        <div class="card">
-          <h3>Bài thực hành 6: Ứng dụng Chatbot AI</h3>
-          <p>Thực hành tạo lập kịch bản và huấn luyện chatbot AI hỗ trợ trả lời tự động câu hỏi thường gặp tuyển sinh ULIS.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="summary" class="content-section">
-      <div class="section-header">
-        <span class="section-num">03 .</span>
-        <h2 class="section-title">Tổng kết</h2>
-      </div>
-      <div class="card">
-        <h3>Những bài học quý giá</h3>
-        <p>Qua học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo, em không chỉ thành thạo hơn các công cụ số mà còn thay đổi tư duy về cách học tập chủ động. Công nghệ không thay thế con người, nhưng người biết dùng công nghệ sẽ đi nhanh và xa hơn.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="content-section">
-      <div class="section-header">
-        <span class="section-num">04 .</span>
-        <h2 class="section-title">Liên hệ</h2>
-      </div>
-      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h3>Kết nối với mình</h3>
-        <p style="margin-bottom: 1.5rem;">Đừng ngần ngại liên lạc với mình qua các kênh mạng xã hội hoặc gửi mail trực tiếp nhé!</p>
-        <a href="mailto:dungtranahc1@gmail.com" class="hero-cta" style="margin-top: 1rem;">Gửi Email Cho Dung</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Trần Thị Mỹ Dung. All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
-
