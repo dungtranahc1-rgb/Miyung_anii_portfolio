@@ -97,7 +97,8 @@
     nav ul li{ flex-shrink:0; }
   }
 
-  section{ padding:12vh 6% 10vh; position:relative; }
+  /* Đã tối ưu thêm scroll-margin-top để không bị thanh menu che mất tiêu đề */
+  section{ padding:12vh 6% 10vh; position:relative; scroll-margin-top: 80px; }
 
   #home{ min-height:92vh; display:flex; align-items:center; padding-top:8vh; }
   .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; width:100%; }
@@ -401,7 +402,7 @@
     <div class="hero">
       <div class="eyebrow fade-up" style="animation-delay:0s">Digital Portfolio · 2026</div>
       <h1 class="fade-up" style="animation-delay:0.1s">Trần Thị Mỹ <span class="last">Dung</span></h1>
-      <p class="role fade-up" style="animation-delay:0.2s">Sinh viên khoa Ngôn ngữ và Văn hóa Anh, Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS).</p>
+      <p class="role fade-up" style="animation-delay:0.2s">Em là sinh viên khoa Ngôn ngữ và Văn hóa Anh, Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS). Portfolio này lưu lại hành trình 6 bài thực hành của học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo của em.</p>
       <div class="tags fade-up" style="animation-delay:0.3s">
         <span>Ngoại ngữ</span>
         <span>Công nghệ</span>
@@ -427,8 +428,9 @@
         <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
     </div>
+    <!-- ĐÃ CẬP NHẬT: Thay đổi đường dẫn ảnh thành profile.jpg -->
     <div class="photo-frame fade-up" id="photoFrame" style="animation-delay:0.15s">
-      <img src="received_1505951713937582.jpeg?v=2" alt="Trần Thị Mỹ Dung" onerror="this.parentElement.style.display='none'">
+      <img src="profile.jpg" alt="Trần Thị Mỹ Dung">
     </div>
   </div>
   <div class="scroll-cue">Cuộn xuống</div>
@@ -639,7 +641,7 @@
         <p class="p-sub">Nghiên cứu chính sách AI của ĐHQGHN kết hợp thực hành viết luận có AI hỗ trợ.</p>
         <div class="skill-tag">Kỹ năng rèn luyện · Sử dụng AI có trách nhiệm &amp; liêm chính học thuật</div>
 
-        <p>Sau khi tìm hiểu chính sách sử dụng AI của ĐHQGHN, em thực hành viết luận có AI hỗ trợ theo quy trình 4 bước và luôn đối chiếu số liệu trước khi dùng.</p>
+        <p>After finding out about the AI usage policy of VNU, I practiced essay writing with AI assistance through a 4-step process and always cross-checked data before using.</p>
 
         <h4>Bộ 6 nguyên tắc cá nhân</h4>
         <table class="mini-table">
@@ -690,7 +692,7 @@
         <h5>Vai trò điều phối nhóm</h5>
         <p>Thử thách lớn nhất với em có lẽ nằm ở giai đoạn đảm nhận vai trò leader trong Bài tập giữa kỳ, khi em phải vừa giữ vững tiến độ chung của cả nhóm, vừa cố gắng không tạo áp lực khiến không khí làm việc trở nên căng thẳng. Đó là một bài học không nhỏ về cách cân bằng giữa trách nhiệm và sự thấu hiểu đồng đội.</p>
         <h5>Lần đầu triển khai web thực tế</h5>
-        <p>Bên cạnh đó, lần đầu tiên tự tay đưa một trang web lên internet thông qua GitHub và Vercel cũng là một trải nghiệm không hề dễ dàng, khi em phải mày mò từng bước một, từ việc tạo kho lưu trữ cho đến khi trang web thực sự hoạt động. Dù đôi lúc cảm thấy loay hoay, em vẫn kiên trì đến cùng, và khi hoàn thành, em thật sự cảm thấy tự hào vì đã không bỏ cuộc giữa chừng.</p>
+        <p>Bên cạnh đó, lần đầu tiên tự tay đưa một trang web lên internet thông qua GitHub và Vercel cũng là một trải nghiệm không hề dễ dàng, khi em phải mày mò từng bước một, từ việc tạo kho lưu trữ cho đến khi trang web thực sự hoạt động. Dù đôi lúc cảm thấy loayhoay, em vẫn kiên trì đến cùng, và khi hoàn thành, em thật sự cảm thấy tự hào vì đã không bỏ cuộc giữa chừng.</p>
       </div>
     </div>
     <div class="journey-item spotlight">
