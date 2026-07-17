@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trần Thị Mỹ Dung | Digital Portfolio</title>
-<meta name="description" content="Digital Portfolio của Trần Thị Mỹ Dung - Sinh viên khoa Ngôn ngữ và Văn hóa Anh, ULIS - VNU. 
-  Chào mừng bạn đã ghé thăm không gian số của mình! Mình yêu thích việc khám phá sự giao thoa giữa ngôn ngữ và công nghệ hiện đại. Portfolio này được xây dựng như một cuốn nhật ký ghi chép quá trình ứng dụng AI vào học tập và phát triển bản thân.">
+<meta name="description" content="Digital Portfolio của Trần Thị Mỹ Dung - Sinh viên khoa Ngôn ngữ và Văn hóa Anh, ULIS - VNU. Tổng hợp 6 bài thực hành học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
@@ -102,6 +101,10 @@
 
   #home{ min-height:92vh; display:flex; align-items:center; padding-top:8vh; }
   .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; width:100%; }
+  .welcome-msg{
+    font-size:0.95rem; color:var(--muted); max-width:52ch; margin-bottom:20px;
+    padding-left:14px; border-left:2px solid var(--accent); font-style:italic;
+  }
   .eyebrow{
     font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--glow);
     display:flex; align-items:center; gap:10px; margin-bottom:22px; font-weight:600;
@@ -134,7 +137,8 @@
     position:relative; width:100%; max-width:340px; margin:0 auto;
     aspect-ratio:4/5; border-radius:24px; padding:4px;
     background:linear-gradient(140deg,var(--accent),var(--accent2),var(--glow));
-    animation:glowmove 8s ease-in-out infinite;
+    opacity:0; transform:translateY(16px);
+    animation:fadeUpIn 0.6s ease forwards, glowmove 8s ease-in-out infinite 0.6s;
     will-change:transform;
   }
   @keyframes glowmove{ 0%,100%{ filter:hue-rotate(0deg); } 50%{ filter:hue-rotate(20deg); } }
@@ -400,9 +404,9 @@
 <section id="home">
   <div class="hero-grid">
     <div class="hero">
-      <div class="eyebrow fade-up" style="animation-delay:0s">Digital Portfolio · 2026</div>
+      <p class="welcome-msg fade-up" style="animation-delay:0s">Chào mừng thầy cô đã ghé thăm không gian số của em! Với niềm yêu thích việc khám phá sự giao thoa giữa ngôn ngữ và công nghệ hiện đại, em đã xây dựng Portfolio này như một cuốn nhật ký ghi chép quá trình ứng dụng AI vào học tập và phát triển bản thân trong suốt quá trình học vừa qua.</p>
+      <div class="eyebrow fade-up" style="animation-delay:0.05s">Digital Portfolio · 2026</div>
       <h1 class="fade-up" style="animation-delay:0.1s">Trần Thị Mỹ <span class="last">Dung</span></h1>
-      <p class="role fade-up" style="animation-delay:0.2s">Em là sinh viên khoa Ngôn ngữ và Văn hóa Anh, Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS). Portfolio này lưu lại hành trình 6 bài thực hành của học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo của em.</p>
       <div class="tags fade-up" style="animation-delay:0.3s">
         <span>Ngoại ngữ</span>
         <span>Công nghệ</span>
@@ -429,7 +433,7 @@
       </a>
     </div>
     <div class="photo-frame fade-up" id="photoFrame" style="animation-delay:0.15s">
-      <img src="received_1505951713937582.jpeg?v=2" alt="Trần Thị Mỹ Dung">
+      <img src="profile.jpg" alt="Trần Thị Mỹ Dung">
     </div>
   </div>
   <div class="scroll-cue">Cuộn xuống</div>
@@ -494,27 +498,27 @@
       <div class="sidebar-title">Danh sách bài tập</div>
       <button class="proj-item active" data-target="p1" onclick="switchProj(this,'p1')">
         <span class="icon-box">📁</span>
-        Quản lý tệp &amp; thư mục
+        <span class="item-label"><b>1.</b> Quản lý tệp &amp; thư mục</span>
       </button>
       <button class="proj-item" data-target="p2" onclick="switchProj(this,'p2')">
         <span class="icon-box">🔍</span>
-        Đánh giá học thuật
+        <span class="item-label"><b>2.</b> Đánh giá học thuật</span>
       </button>
       <button class="proj-item" data-target="p3" onclick="switchProj(this,'p3')">
         <span class="icon-box">💬</span>
-        Viết Prompt hiệu quả
+        <span class="item-label"><b>3.</b> Viết Prompt hiệu quả</span>
       </button>
       <button class="proj-item" data-target="p4" onclick="switchProj(this,'p4')">
         <span class="icon-box">🤝</span>
-        Hợp tác trực tuyến
+        <span class="item-label"><b>4.</b> Hợp tác trực tuyến</span>
       </button>
       <button class="proj-item" data-target="p5" onclick="switchProj(this,'p5')">
         <span class="icon-box">🎨</span>
-        Sáng tạo nội dung AI
+        <span class="item-label"><b>5.</b> Sáng tạo nội dung AI</span>
       </button>
       <button class="proj-item" data-target="p6" onclick="switchProj(this,'p6')">
         <span class="icon-box">🛡️</span>
-        AI có trách nhiệm
+        <span class="item-label"><b>6.</b> AI có trách nhiệm</span>
       </button>
     </div>
 
@@ -527,12 +531,18 @@
         <div class="skill-tag">Kỹ năng rèn luyện · Quản lý dữ liệu số</div>
 
         <div class="step-list">
-          <div class="step-row"><div class="step-num">1</div><p>Tạo thư mục gốc <code>ThucHanh_MyDung</code>, bên trong có thư mục con <code>TaiLieu</code></p></div>
-          <div class="step-row"><div class="step-num">2</div><p>Tạo tệp văn bản, đổi tên <code>GhiChu.txt</code> thành <code>GhiChuQuanTrong.txt</code></p></div>
-          <div class="step-row"><div class="step-num">3</div><p>Thực hành <strong>Copy &amp; Paste</strong> để nhân bản tệp</p></div>
-          <div class="step-row"><div class="step-num">4</div><p>Thực hành <strong>Cut &amp; Paste</strong> để di chuyển tệp</p></div>
-          <div class="step-row"><div class="step-num">5</div><p>Xóa vào Thùng rác rồi khôi phục lại bằng Restore</p></div>
-          <div class="step-row"><div class="step-num">6</div><p>Xóa vĩnh viễn bằng Shift + Delete</p></div>
+          <div class="step-row"><div class="step-num">1</div><p>Mở File Explorer</p></div>
+          <div class="step-row"><div class="step-num">2</div><p>Truy cập ổ đĩa/thư mục lưu trữ</p></div>
+          <div class="step-row"><div class="step-num">3</div><p>Tạo thư mục mới <code>ThucHanh_MyDung</code></p></div>
+          <div class="step-row"><div class="step-num">4</div><p>Vào thư mục vừa tạo</p></div>
+          <div class="step-row"><div class="step-num">5</div><p>Tạo tệp tin văn bản <code>GhiChu.txt</code></p></div>
+          <div class="step-row"><div class="step-num">6</div><p>Đổi tên tệp tin thành <code>GhiChuQuanTrong.txt</code></p></div>
+          <div class="step-row"><div class="step-num">7</div><p>Tạo thư mục con <code>TaiLieu</code></p></div>
+          <div class="step-row"><div class="step-num">8</div><p>Sao chép tệp tin bằng <strong>Copy &amp; Paste</strong></p></div>
+          <div class="step-row"><div class="step-num">9</div><p>Di chuyển tệp tin bằng <strong>Cut &amp; Paste</strong></p></div>
+          <div class="step-row"><div class="step-num">10</div><p>Xóa tệp tin (chuyển vào Thùng rác)</p></div>
+          <div class="step-row"><div class="step-num">11</div><p>Xóa vĩnh viễn bằng Shift + Delete</p></div>
+          <div class="step-row"><div class="step-num">12</div><p>Khôi phục tệp tin từ Thùng rác</p></div>
         </div>
 
         <p>Qua bài này, em nhận ra một quy tắc đặt tên rõ ràng và cấu trúc thư mục hợp lý sẽ tiết kiệm đáng kể thời gian tìm kiếm tài liệu về sau.</p>
